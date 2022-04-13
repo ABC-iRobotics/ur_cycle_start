@@ -23,6 +23,8 @@ WORKDIR /root/catkin_ws/src/universal_robot
 RUN rm -drf CONTRIBUTING.md README.md .travis.yml .gitignore universal_robot* *_moveit_config ur_bringup ur_driver ur_e_description ur_e_gazebo ur_gazebo ur_kinematics ur_msgs
 WORKDIR /root/catkin_ws/src
 RUN git clone https://github.com/ABC-iRobotics/ur_cycle_start.git
+WORKDIR /root/catkin_ws/src/ur_cycle_start
+RUN rm -drf docker
 WORKDIR /root/catkin_ws
 
 RUN /bin/bash -c '. /opt/ros/noetic/setup.bash; cd /root/catkin_ws; catkin_make'
